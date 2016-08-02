@@ -40,17 +40,18 @@ public class Fragment1 extends Fragment implements Colors {
 
             @Override
             public Holder onCreateViewHolder(ViewGroup parent, int viewType) {
-                return null;
+                View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_list, null);
+                return new Holder(view);
             }
 
             @Override
             public void onBindViewHolder(Holder holder, int position) {
-
+                holder.bind(position);
             }
 
             @Override
             public int getItemCount() {
-                return 0;
+                return Style.values().length;
             }
         });
     }
